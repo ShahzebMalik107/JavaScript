@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #182e4e;
+    --secondary-color: #e51a3b;
+    --white: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    max-width: 70%;
+    width: 100%;
+    margin: 0 auto;
+}
+// Cart
+
+.cart {
+    padding-top: 200px;
+    .heading {
+        text-align: center;
+    }
+    .tabs_main {
+        padding-top: 50px;
+        //Tabs
+        .tabs {
+            display: flex;
+            justify-content: center;
+            &__items {
+                cursor: pointer;
+                list-style: none;
+                margin: 0 10px;
+                padding: 15px 30px;
+                border: solid 1px var(--secondary-color);
+                border-radius: 50px;
+            }
+            &--active {
+                border-width: 2px;
+            }
+        }
+    }
+}
+
+//Product
+.product
+{
+    height: 0;
+    overflow: hidden;
+    transform: scale(1,0);
+    transition: .5s;
+}
+.main_card {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 1em;
+    .Card {
+        border: solid 2px var(--secondary-color);
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+
+        &__image {
+            background-color: var(--primary-color);
+            height: 400px;
+            overflow: hidden;
+        }
+        &__image::after
+        {
+            overflow: hidden;
+            content: "Add to card";
+            text-align: center;
+            font-size: 50px;
+            color: var(--white);
+            display: block;
+            height: 400px;
+            width: 100%;
+            background-color:var(--secondary-color);
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            transition: .4s;
+        }
+        &__price
+        {
+            background-color: var(--secondary-color);
+            display: inline-block;
+            padding: 20px;
+            clip-path: circle();
+            color: var(--white);
+            position: absolute;
+            right: 0;
+            top: 63%;
+        }
+        &__title
+        {
+            padding: 50px 20px 10px 20px;
+            color: var(--secondary-color);
+
+        }
+        &__disc
+        {
+            padding: 20px;
+        }
+    }
+    .Card:hover
+    {
+        .Card__image::after{
+            opacity: .75;
+
+        }
+    }
+}
+
+.product--active
+{
+    transform: scale(1);
+    height: 100%;
+    transition: .5s;
+    overflow: visible;
+}

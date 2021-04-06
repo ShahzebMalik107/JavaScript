@@ -1,0 +1,133 @@
+:root {
+  --primary-color: #182e4e;
+  --secondary-color: #e51a3b;
+  --white: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 70%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cart {
+  padding-top: 200px;
+}
+
+.cart .heading {
+  text-align: center;
+}
+
+.cart .tabs_main {
+  padding-top: 50px;
+}
+
+.cart .tabs_main .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cart .tabs_main .tabs__items {
+  cursor: pointer;
+  list-style: none;
+  margin: 0 10px;
+  padding: 15px 30px;
+  border: solid 1px var(--secondary-color);
+  border-radius: 50px;
+}
+
+.cart .tabs_main .tabs--active {
+  border-width: 2px;
+}
+
+.product {
+  height: 0;
+  overflow: hidden;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.main_card {
+  padding-top: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+  grid-gap: 1em;
+}
+
+.main_card .Card {
+  border: solid 2px var(--secondary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main_card .Card__image {
+  background-color: var(--primary-color);
+  height: 400px;
+  overflow: hidden;
+}
+
+.main_card .Card__image::after {
+  overflow: hidden;
+  content: "Add to card";
+  text-align: center;
+  font-size: 50px;
+  color: var(--white);
+  display: block;
+  height: 400px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.main_card .Card__price {
+  background-color: var(--secondary-color);
+  display: inline-block;
+  padding: 20px;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  color: var(--white);
+  position: absolute;
+  right: 0;
+  top: 63%;
+}
+
+.main_card .Card__title {
+  padding: 50px 20px 10px 20px;
+  color: var(--secondary-color);
+}
+
+.main_card .Card__disc {
+  padding: 20px;
+}
+
+.main_card .Card:hover .Card__image::after {
+  opacity: .75;
+}
+
+.product--active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  height: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow: visible;
+}
+/*# sourceMappingURL=style.css.map */
